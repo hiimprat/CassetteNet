@@ -36,6 +36,7 @@ import OAuthUsernamePage from './components/pages/OAuthUsernamePage';
 import ResetPasswordPage from './components/pages/ResetPasswordPage';
 import socketIOClient from 'socket.io-client';
 import SnakeGame from './components/Snake/SnakeGame';
+import NowPlayingCard from './components/NowPlayingCard'; 
 
 function App() {
   const [socket, setSocket] = useState(socketIOClient(SERVER_ROOT_URL));
@@ -96,6 +97,7 @@ function App() {
                 <AtmosphereSoundContext.Provider value={{atmosphereSound, setAtmosphereSound}}>
                   <BrowserRouter>
                       <PageFrame loggedIn={user?.isLoggedIn} />
+                        <NowPlayingCard />
                         <div style={{ marginBottom: '105px', position: 'absolute', left: 8*9, height: 'calc(100vh - 8*9)', width: '90%'}}>
                           <Switch>
                             <Route exact path="/" component={user?.isLoggedIn ? DashboardPage : StartPage} />
