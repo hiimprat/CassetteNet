@@ -162,7 +162,7 @@ function ListeningRoomPage(props) {
                 socket.on('changeSong', ({snakeScores, rhythmScores}) => {
                     setGameOver(true);
                     // TODO: have popup here showing final scores and winner
-                    console.log(snakeScores)
+                    console.log("Snake scores: " + snakeScores);
                     setScores([]);
                     // setScreen('home');
                     getListeningRoom(props.match.params.id).then(lr => {
